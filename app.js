@@ -29,4 +29,4 @@ app.get('/', (req, res, next) => {
 app.use(notFound)
 app.use(errorHandler)
 
-app.listen(PORT, HOSTNAME, () => console.log('Server is running on PORT', PORT))
+app.listen(PORT, () => console.log('Server is running on PORT', PORT))

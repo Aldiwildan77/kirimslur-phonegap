@@ -26,6 +26,5 @@ switch (NODE_ENV) {
 const DATABASE = database
 const AUTH_TOKEN = process.env.AUTH_TOKEN
 const PORT = process.env.PORT || '5015'
-const HOSTNAME = process.env.HOSTNAME || 'localhost'
 
-module.exports = { NODE_ENV, HOSTNAME, PORT, DATABASE, AUTH_TOKEN }
+module.exports = { NODE_ENV, PORT, DATABASE, AUTH_TOKEN }
