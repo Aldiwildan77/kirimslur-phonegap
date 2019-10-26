@@ -10,8 +10,6 @@ switch (NODE_ENV) {
       DB_NAME: process.env.DB_NAME,
       DB_DIALECT: 'mysql'
     }
-    port = process.env.PORT
-    hostname = process.env.HOST
     break;
   default:
     database = {
