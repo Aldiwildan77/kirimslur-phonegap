@@ -4,7 +4,7 @@ const cors = require('cors')
 const app = express()
 
 // db init
-// require('./database')
+require('./database')
 
 // config, middleware, & etc
 const { errorHandler, notFound } = require('./middlewares')
