@@ -1,7 +1,7 @@
 require('dotenv').config()
 const NODE_ENV = process.env.NODE_ENV || 'development'
 
-let database, port, hostname
+let database
 switch (NODE_ENV) {
   case 'production':
     database = {
@@ -20,14 +20,12 @@ switch (NODE_ENV) {
       DB_NAME: process.env.DB_NAME || 'kirimslur',
       DB_DIALECT: 'mysql'
     }
-    port = '5015'
-    hostname = 'localhost'
     break;
 }
 
 const DATABASE = database
 const AUTH_TOKEN = process.env.AUTH_TOKEN
-const PORT = port
-const HOSTNAME = hostname
+const PORT = process.env.PORT || '5015'
+const HOSTNAME = process.env.HOSTNAME || 'localhost'
 
 module.exports = { NODE_ENV, HOSTNAME, PORT, DATABASE, AUTH_TOKEN }
