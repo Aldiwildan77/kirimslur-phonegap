@@ -1,0 +1,36 @@
+{
+  "name": "kirimslur-server",
+  "version": "1.0.0",
+  "description": "Projek Akhir PPK - Server KirimSlur",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aldiwildan77/kirimslur-server.git"
+  },
+  "keywords": [],
+  "author": "Muhammad Wildan Aldiansyah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aldiwildan77/kirimslur-server/issues"
+  },
+  "homepage": "https://github.com/Aldiwildan77/kirimslur-server#readme",
+  "dependencies": {
+    "@hapi/joi": "^16.1.7",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.20.0",
+    "lodash": "^4.17.15",
+    "morgan": "^1.9.1",
+    "mysql2": "^1.7.0"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^1.19.4"
+  }
+}
