@@ -1,5 +1,5 @@
-require('dotenv').config()
 const NODE_ENV = process.env.NODE_ENV || 'development'
+if(NODE_ENV === 'development') require('dotenv').config()
 
 let database
 switch (NODE_ENV) {
