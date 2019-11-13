@@ -7,20 +7,30 @@ const app = express()
 require('./database')
 
 // config, middleware, & etc
-const { errorHandler, notFound } = require('./middlewares')
-const { NODE_ENV, PORT } = require('./config')
+const {
+  errorHandler,
+  notFound
+} = require('./middlewares')
+const {
+  NODE_ENV,
+  PORT
+} = require('./config')
 
 // Routes
 const kurirRoutes = require('./routes/Kurir')
+const pengirimanRoutes = require('./routes/Pengiriman')
 
 // Middleware
 app.use(cors())
 app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({
+  extended: true
+}))
 app.use(logger(NODE_ENV === 'production' ? 'combined' : 'dev'))
 
 // Endpoint
 app.use('/barang', kurirRoutes)
+app.use('/pengiriman', pengirimanRoutes)
 
 app.get('/', (req, res, next) => {
   res.status(200).json({
