@@ -19,6 +19,7 @@ const {
 // Routes
 const kurirRoutes = require('./routes/Kurir')
 const pengirimanRoutes = require('./routes/Pengiriman')
+const pelangganRoutes = require('./routes/Pelanggan')
 
 // Middleware
 app.use(cors())
@@ -31,6 +32,7 @@ app.use(logger(NODE_ENV === 'production' ? 'combined' : 'dev'))
 // Endpoint
 app.use('/barang', kurirRoutes)
 app.use('/pengiriman', pengirimanRoutes)
+app.use('/pelanggan', pelangganRoutes)
 
 app.get('/', (req, res, next) => {
   res.status(200).json({
