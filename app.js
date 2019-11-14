@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(logger(NODE_ENV === 'production' ? 'combined' : 'dev'))
 
 // Endpoint
-app.use('/barang', kurirRoutes)
+app.use('/kurir', kurirRoutes)
 
 app.get('/', (req, res, next) => {
   res.status(200).json({

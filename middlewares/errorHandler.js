@@ -9,6 +9,7 @@ function notFound(req, res, next) {
 function errorHandler(err, req, res, next) {
   res.status(res.statusCode || 500);
   res.json({
+    status: 'error',
     message: err.message,
     stack: NODE_ENV === 'production' ? {} : err.stack
   });
