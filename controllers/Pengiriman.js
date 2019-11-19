@@ -2,18 +2,7 @@ const knex = require('../database')
 
 const add = async (req, res, next) => {
     try {
-        const {
-            barang,
-            pelanggan,
-            kurir,
-            kategori
-        } = req.body
-        knex('invoice').insert({
-            noresi: noresi,
-            tanggal: tanggal,
-            pengirim: pengirim,
-            penerima: penerima
-        })
+
     } catch (error) {
         return next(error)
     }
@@ -31,9 +20,4 @@ const del = async (req, res, next) => {
 
 }
 
-module.exports = {
-    add,
-    read,
-    update,
-    del
-}
+module.exports = { add, read, update, del }
