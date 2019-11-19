@@ -13,6 +13,8 @@ const { NODE_ENV, PORT } = require('./config')
 // Routes
 const kurirRoutes = require('./routes/Kurir')
 const pengirimanRoutes = require('./routes/Pengiriman')
+const pelangganRoutes = require('./routes/Pelanggan')
+const barangRoutes = require('./routes/Barang')
 
 // Middleware
 app.use(cors())
@@ -23,6 +25,8 @@ app.use(logger(NODE_ENV === 'production' ? 'combined' : 'dev'))
 // Endpoint
 app.use('/kurir', kurirRoutes)
 app.use('/pengiriman', pengirimanRoutes)
+app.use('/pelanggan', pelangganRoutes)
+app.use('/barang', barangRoutes)
 
 app.get('/', (req, res, next) => {
   res.status(200).json({
