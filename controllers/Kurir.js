@@ -94,4 +94,10 @@ const readById = async (req, res, next) => {
   }
 }
 
-module.exports = { add, read, update, del, readById }
+module.exports = {
+  add,
+  read,
+  update,
+  del,
+  readById
+}
