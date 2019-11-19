@@ -26,40 +26,40 @@ const add = async (req, res, next) => {
 
 //membuat fungsi del untuk menghapus barang
 const del = async (req, res, next) => {
-	const barangId = req.params
-	try {
-		const deleteBarang = await models.deleteModel(TABLE, barangId)
-		if (!deleteBarang) {
-			const error = new Error('Failed to delete barang')
-			res.statusCode = 409
-			return next(error)
-		} else {
-			return res.status(204).json({})
+  const barangId = req.params
+  try {
+    const deleteBarang = await models.deleteModel(TABLE, barangId)
+    if (!deleteBarang) {
+      const error = new Error('Failed to delete barang')
+      res.statusCode = 409
+      return next(error)
+    }else{
+			return res.status(204).json({})	
 		}
-	} catch (error) {
-		return next(error)
-	}
+  } catch (error) {
+    return next(error)
+  }
 }
 
 const update = async (req, res, next) => {
-	const barang = req.body
-	const barangId = req.params
+  const barang = req.body
+  const barangId = req.params
 
-	try {
-		const updateBarang = await models.updateModel(TABLE, barang, barangId)
-		if (!updateBarang) {
-			const error = new Error('Failed to update barang')
-			res.statusCode = 409
-			return next(error)
-		} else {
+  try {
+    const updateBarang = await models.updateModel(TABLE, barang, barangId)
+    if (!updateBarang) {
+      const error = new Error('Failed to update barang')
+      res.statusCode = 409
+      return next(error)
+    } else {
 			return res.status(200).json({
 				status: 'success',
 				data: barang
-			})
+			})			
 		}
-	} catch (error) {
-		return next(error)
-	}
+  } catch (error) {
+    return next(error)
+  }
 }
 
 const read = async (req, res, next) => {
@@ -98,4 +98,4 @@ const readById = async (req, res, next) => {
 		return next(error)
 	}
 }
-module.exports = { add, del, read, readById, update }
+module.exports = { add, del, read, readById, update}
