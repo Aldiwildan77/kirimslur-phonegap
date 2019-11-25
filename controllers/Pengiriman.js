@@ -90,7 +90,7 @@ const del = async (req, res, next) => {
 
 //create function read dengan param Id
 const readById = async (req, res, next) => {
-    const invoiceId = req.body
+    const invoiceId = req.params
     try {
         const getInvoiceById = await models.getModel(TABLE, invoiceId)
         if (!getInvoiceById) {
